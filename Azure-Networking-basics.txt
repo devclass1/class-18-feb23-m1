@@ -50,3 +50,24 @@ How small and how large can VNets and subnets be?
 #############
 
 The smallest supported IPv4 subnet is /29, and the largest is /2 (using CIDR subnet definitions). IPv6 subnets must be exactly /64 in size.
+
+################
+Can I add subnets after the VNet is created?
+###############
+
+Yes. Subnets can be added to VNets at any time as long as the subnet address range is not part of another subnet and there is available space left in the virtual network's address range.
+
+####################
+Can I modify the size of my subnet after I create it?
+##################
+Yes. You can add, remove, expand, or shrink a subnet if there are no VMs or services deployed within it.
+
+###############
+Can I modify Vnet after I created them?
+###############
+Yes. You can add, remove, and modify the CIDR blocks used by a VNet.
+
+############
+If I am running my services in a VNet, can I connect to the internet?
+#############
+Yes. All services deployed within a VNet can connect outbound to the internet. To learn more about outbound internet connections in Azure, see Outbound connections. If you want to connect inbound to a resource deployed through Resource Manager, the resource must have a public IP address assigned to it. To learn more about public IP addresses, see Public IP addresses. Every Azure Cloud Service deployed in Azure has a publicly addressable VIP assigned to it. You define input endpoints for PaaS roles and endpoints for virtual machines to enable these services to accept connections from the internet.
